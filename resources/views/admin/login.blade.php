@@ -20,11 +20,15 @@
                 <div class="admin-alert admin-alert-error">{{ $errors->first() }}</div>
             @endif
             <label>
+                Email Admin
+                <input type="email" name="email" value="{{ old('email', 'admin@alikhlas.test') }}" required autofocus>
+            </label>
+            <label>
                 Password Admin
-                <input type="password" name="password" required autofocus>
+                <input type="password" name="password" required>
             </label>
             <button class="primary-button" type="submit">Masuk</button>
-            <small>Password awal: admin12345. Ganti lewat ENV `ADMIN_PASSWORD` saat produksi.</small>
+            <small>Akun awal: admin@alikhlas.test / admin12345. Bisa diganti lewat ENV `ADMIN_EMAIL` dan `ADMIN_PASSWORD`.</small>
         </form>
     </main>
 </body>
