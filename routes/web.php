@@ -9,8 +9,13 @@ use App\Http\Controllers\Admin\InstitutionController;
 use App\Http\Controllers\Admin\MessageAdminController;
 use App\Http\Controllers\MosqueMessageController;
 use App\Http\Controllers\PublicContentController;
+use App\Http\Controllers\UploadedFileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
+
+Route::get('/uploads/{path}', [UploadedFileController::class, 'show'])
+    ->where('path', '.*')
+    ->name('uploads.show');
 
 Route::get('/', function () {
     $hasContentTables = Schema::hasTable('events')
